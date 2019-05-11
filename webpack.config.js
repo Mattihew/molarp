@@ -1,8 +1,7 @@
 const path = require('path');
-/*const {DefinePlugin} = require('webpack');
+const {DefinePlugin} = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
-const {GenerateSW} = require('workbox-webpack-plugin');
+/*const {GenerateSW} = require('workbox-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');*/
 
 /**
@@ -18,12 +17,13 @@ module.exports = function (env, argv)
     const NODE_ENV = env.NODE_ENV || 'development';
     return {
         entry: {
-            server: './src/server.ts'
+            server: './src/server.ts',
+            index: './src/index.tsx'
         },
         output: {
-            filename: '[name].js',
-            path: path.resolve(process.cwd(), 'dist/js'),
-            publicPath: '/js'
+            filename: 'js/[name].js',
+            path: path.resolve(process.cwd(), 'dist'),
+            publicPath: '/'
         },
         devtool: 'eval-source-map',
         node: {
@@ -89,24 +89,20 @@ module.exports = function (env, argv)
             }
         },
         plugins: [
-            /*new HtmlWebpackPlugin({
+            new HtmlWebpackPlugin({
                 filename: 'index.html',
-                template: './public/index.html',
-                alwaysWriteToDisk: true,
-                chunks: ['home', 'vendors'],
-                favicon: "./src/images/rsg_logo.png",
+                chunks: ['index', 'vendors'],
                 meta: {viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'}
 
             }),
-            new HtmlWebpackHarddiskPlugin()
-            new GenerateSW({
+            /*new GenerateSW({
                 clientsClaim: true,
                 skipWaiting: true
             }),
             new WebpackPwaManifest({
                 filename: '[name].[hash:8].[ext]',
-                name: 'Project Shade',
-                short_name: 'Shade',
+                name: "Matt's OpenLayers And React Prototype",
+                short_name: 'Molarp',
                 description: 'My awesome Progressive Web App!',
                 theme_color: '#000',
                 background_color: '#000',
@@ -118,11 +114,11 @@ module.exports = function (env, argv)
                         destination: 'icons'
                     }
                 ]
-            }),
+            }),*/
             new DefinePlugin({
                 "process.env.NODE_ENV": JSON.stringify(NODE_ENV),
                 "process.env.PUBLIC_URL": JSON.stringify('')
-            })*/
+            })
         ]
     };
 };
