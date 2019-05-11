@@ -3,14 +3,16 @@
   "description": "Matt's OpenLayers And React Prototype",
   "version": "1.0.0",
   "private": false,
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "devDependencies": {
-
+    "awesome-typescript-loader": "^5.2.1",
+    "typescript": "^3.4.5",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
   },
   "scripts": {
-    "start": "echo 'hello world'"
+    "prestart": "webpack",
+    "start": "node ./dist/server.js"
   },
   "eslintConfig": {
     "extends": "react-app"

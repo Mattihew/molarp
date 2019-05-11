@@ -2,3 +2,9 @@
 /.idea/worksapce.xml
 /.idea/usage.statistics.xml
 /.idea/tasks.xml
+
+#npm
+/node_modules
+
+#output
+/dist
