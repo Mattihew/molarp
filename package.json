@@ -1,0 +1,18 @@
+{
+  "name": "molarp",
+  "description": "Matt's OpenLayers And React Prototype",
+  "version": "1.0.0",
+  "private": false,
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+
+  },
+  "scripts": {
+    "start": "echo 'hello world'"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  }
+}
