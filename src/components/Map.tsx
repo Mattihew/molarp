@@ -14,7 +14,7 @@ import 'ol/ol.css';
 
 const mapId = 'map';
 
-export default class MapComponent extends React.Component {
+export default class MapComponent extends React.PureComponent {
 
     componentDidMount(): void {
         new Map({
